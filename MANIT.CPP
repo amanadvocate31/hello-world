@@ -1021,7 +1021,197 @@ case 1:
     sub[5]="surveying 2 (ce226)";
     sub[6]="surveying laboratory 2(ce227)";
     sub[7]="geotechnical engineering laboratory1(ce228)";
-    sub[8]="fluid mechanics laboratory(ce229)";
+    sub[8]="fluid mechanics laboratory2(ce229)";
+    break;
+    }
+    case 5:
+    {
+    sub[0]="structural design & drawing 2(ce311)";
+    sub[1]="geotecnical engg 2(ce312)";
+    sub[2]="transportation engineering1(ce313 )";
+    sub[3]="geotecnical engg. lab 2(ce314)";
+    sub[4]="transportation engg.lab(ce315)";
+    break;
+    }
+    case 6:
+    {
+    sub[0]="irrigation engg(ce321)";
+    sub[1]="project costing and contract mangement(ce322)";
+    sub[2]="water supply engg(ce323)";
+    sub[3]="structural analysis lab(ce324)";
+    sub[4]="CAD lab(ce325)";
+    sub[5]="minor project(ce326)";
+    break;
+    }
+    case 7:
+    {
+    sub[0]="wastewater engg(ce411)";
+    sub[1]="water and wastewater analysis lab(ce413)";
+    sub[2]="major project(ce413)";
+    sub[3]="educational tour & training(ce414)";
+    break;
+    }
+    case 8:
+    {
+    sub[0]="transportation engg (ce421)";
+    sub[1]="major project(ce422)";
+    sub[2]="general proficiency(ce423)";
+    }  }
+
+    break;
+ }
+ case 2 :
+ {
+	switch(sems)
+    {
+     case 2:
+    {
+    sub[5]="mathematics 1(MTH 111)" ;
+    sub[0]="basic civil engineering(CE112)";
+    sub[1]="communication skills(HUM114)";
+    sub[2]="computer programing(CS115)";
+    sub[3]="computer program lab(CS117)";
+    sub[4]="engineering graphics(ME116)";
+     sub[6]="physics(PHY113)";
+     sub[7]="physics(PHY118)";
+     break;
+     }
+    case 1:
+    {
+    sub[0]="basic electronic and electrical engg(EE124)";
+    sub[1]="basic mechanical engg(ME125)";
+    sub[2]="chemistry lab(CHEM129)";
+    sub[3]="electronics and electrical lab(EE128)";
+    sub[4]="engineering chemistry(CHEM122)";
+    sub[5]="environment science(CE123)";
+    sub[6]="mathematics(MTH121)";
+    sub[7]="solid mechanics(CE126)";
+    sub[8]="workshop practice(ME127)";
+    break;
+    }
+    case 3:
+ {
+ sub[0]="discrete structure(cse 211)";
+ sub[1]="data structure(cse212)";
+ sub[2]="digital electronics(cse 213)";
+ sub[3]="digital communication(cse 214)";
+ sub[4]="computer graphics(cse215)";
+ sub[5]="linear algebra & numerical methods(cse216)";
+ sub[6]="ds lab(cse 217)";
+ sub[7]="digital electronics lab(cse218)";
+ sub[8]="cg lab(cse 219)";
+ sub[9]="lab-1(python/vhdl)";
+ break;
+ }
+ case 4:
+ {
+ sub[0]="probability and queuing theory(cse 221)";
+ sub[1]="computer architecture(cse 222)";
+ sub[2]="theory of computation(cse 223)";
+ sub[3]="database management system(cse224)";
+ sub[4]="analysis and design of algorithm(cse225)";
+ sub[5]="software engg(cse 226)";
+ sub[6]="dbms lab(cse 227)";
+ sub[7]="ada lab(cse 228)";
+ sub[8]="se lab(cse 229)";
+ sub[9]="lab-2(cse 230)";
+ break;
+ }
+ case 5:
+ {
+ sub[0]="compiler design(cse 311)";
+ sub[1]="operating system(cse 312)";
+ sub[2]="microprocessor(cse 313)";
+ sub[3]="cd lab(cse 315)";
+ sub[4]="mp lab(cse 316)";
+ sub[5]="os lab(cse 317)";
+ sub[6]="lab-3(cse 318)";
+ sub[7]="minor project(cse 319)";
+ break;
+ }
+ case 6:
+ {
+ sub[0]="computer networks(cse321)";
+ sub[1]="data ware housing and mining(cse322)";
+ sub[2]="artificial intelligence(cse 323)";
+ sub[3]="network lab(cse 325)";
+ sub[4]="data ware housing and mining lab(cse 326)";
+ sub[5]="lab-4(cse 328)";
+ sub[6]="minor project(cse 329)";
+ break;
+ }
+ case 7:
+ {
+ sub[0]="tcp/ip&web technology(cse411)";
+ sub[1]="lab tcp/ip & web technology(cse412)";
+ sub[2]="major project(cse 413)";
+ sub[3]="intership/industrial training(cse 414)";
+ sub[4]="seminar(cse 415)";
+ break;
+ }
+ case 8:
+ {
+ sub[0]="network security(cse 421)";
+ sub[1]="major project(cse 422)";
+ sub[2]="general proficiency(cas423)";
+  sub[3]="seminar(cse424)";
+  }
+  break;
+  }
+ case 3:
+ {
+       switch(sems)
+       {
+     case 1:
+    {
+    sub[5]="mathematics 1(MTH 111)" ;
+    sub[0]="basic civil engineering(CE112)";
+    sub[1]="communication skills(HUM114)";
+    sub[2]="computer programing(CS115)";
+    sub[3]="computer program lab(CS117)";
+    sub[4]="engineering graphics(ME116)";
+     sub[6]="physics(PHY113)";
+     sub[7]="physics(PHY118)";
+     break;
+     }
+    case 2:
+    {
+    sub[0]="basic electronic and electrical engg(EE124)";
+    sub[1]="basic mechanical engg(ME125)";
+    sub[2]="chemistry lab(CHEM129)";
+    sub[3]="electronics and electrical lab(EE128)";
+    sub[4]="engineering chemistry(CHEM122)";
+    sub[5]="environment science(CE123)";
+    sub[6]="mathematics(MTH121)";
+    sub[7]="solid mechanics(CE126)";
+    sub[8]="workshop practice(ME127)";
+    break;
+    }
+    case 3:
+    {
+    sub[0]="mathematics3(mth211)";
+    sub[1]="electrical materials & electromagnetic(ee212)";
+    sub[2]="measurement(ee213)";
+    sub[3]="networks(ee214)";
+    sub[4]="electrical machines 1(ee215)";
+    sub[5]="electronics 1(ee216)";
+    sub[6]="networks lab(ee217)";
+    sub[7]="electrical machines lab1(ee218)";
+    sub[8]="electronics lab 1(ee219)";
+    sub[9]="electrical measurement lab(ee210)";
+    break;
+    }
+    case 4:
+    {
+    sub[0]="utilization of electrical energy(ee221)";
+    sub[1]="power system 1(ee222)";
+    sub[2]="generation of electrical power(ee223)";
+    sub[3]="electrical machines 2(ee224)";
+    sub[4]="instrumentation(ee225)";
+    sub[5]="electronics 2(ee226)";
+    sub[6]="instrumentation lab(ee227)";
+    sub[7]="electrical machines lab-2(ee228)";
+    sub[8]="electronics lab -2(ee229)";
     break;
     }
 
@@ -1030,8 +1220,10 @@ case 1:
 
 
 
-   }
-    }}}
+
+
+
+
 
 
 
