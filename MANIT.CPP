@@ -2,79 +2,746 @@
 #include<conio.h>
 #include<string.h>
 #include<stdio.h>
-int curt_yr[6];  //current date
-int yr;          // current year
-int sch[9];    // array for scholar no
-int valid_sch()
-{ int i,a=1,c;
-  cout<<"enter scholar no\n";
-  for(int j=0;j<9; j++)
+int curt_yr[6];  //  for current date
+int yr;          //for  current year
+int sch[9];    // for array for scholar no
+int getyear();
+char *getbranch();
+
+int class_str()   // for class strenght
+{    int a=0,c,b;
+char *ch;
+if(sch[6]==0 )
+b=sch[7]*10+sch[8];
+else
+b= sch[6]*100+sch[7]*10+sch[8];
+
+c=getyear();
+
+  if(sch[2]==1)
+  { switch(sch[5])
+  {
+   case 1:
+   {      switch(c)
+   {
+   case 1:
+   { if(b<=103)
+      a=1;
+      else
+   {   a=0;
+   return 0;}
+      break;
+      }
+   case 2:
+   {
+   if(b<=102)
+   a=1;
+   else
+{   a=0;
+return a;}
+   break;
+   }
+   case 3:
+   {
+   if(b<=126)
+   a=1;
+   else
+ {  a=0;
+ return a;
+ }
+   break;
+   }
+   case 4:
+   {
+   if(b<=139)
+   a=1;
+   else
+{   a=0;
+return a;}
+   break;
+   }
+   }
+   return a;
+   break;
+   }
+  case 2:
+  {   if(sch[6]==2 || sch[6]==3)
+   {
+   switch(c)
+  {case 1 :
+  {
+  if(b<=301)
+  a=1;
+  else
+{  a=0;
+return a;}
+  break;
+  }
+  case 2:
+  {
+  if(b<=300)
+  a=1;
+  else
+{  a=0;
+return a;}
+  break;
+  }
+  case 3:
+  {
+  if(b<=310)
+  a=1;
+  else
+{  a=0;
+return a;}
+  break;
+  }
+  case 4:
+  {
+  if(b<=307)
+  a=1;
+  else
+ { a=0;
+ return a;}
+  break;
+  }
+    }}
+ else
+ {  switch(c) {
+ case 1:
+ {
+ if(b<=109)
+ a=1;
+ else
+{ a=0;
+return a;}
+ break;
+ }
+ case 2:
+ {
+ if(b<=106)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 3:
+ {
+ if(b<=114)
+ a=1;
+ else
+ {
+ a=0;
+ return a;}
+ break;
+ }
+ case 4:
+ {
+ if(b<=110)
+ a=1;
+ else
+ {a=0;
+ return a;}
+ break;
+ }
+ }}
+ return a;
+ break;
+ }
+ case 3:
+ {
+ switch(c)
+ {
+ case 1:
+ {
+ if(b<=122)
+ a=1;
+ else
+{ a=0 ;
+ return a;}
+ break;
+ }
+ case 2:
+ {
+ if(b<=125)
+ a=1;
+ else
+ {a=0 ;
+ return a;}
+ break;
+ }
+ case 3:
+ {
+ if(b<=130)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 4:
+ {
+ if(b<=134)
+ a=1;
+ else
+{ a=0;
+return a;}
+ break;
+ } }
+ return a;
+ break;
+ }
+ case 4:
+{
+switch(c)
+{
+case 1:
+{
+if(b<=148)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 2:
+{
+if(b<=165)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 3:
+{
+if(b<=169)
+a=1;
+break;
+}
+case 4:
+{
+if(b<=171)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}}
+return a;
+break;
+}
+case 6 :
+{ if(sch[6]==2 || sch[6]==3)
+  {
+  switch(c)
+  {
+case 1:
+{
+if(b<=290)
+   a=1;
+   else
+{ a=0 ;
+return a;}
+   break;
+   }
+ case 2:
+ {
+ if(b<=294)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 3:
+ {
+ if(b<=301)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 4:
+ {
+ if(b<=296)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ }
+ }
+ else
+ {
+ switch(c)
+ {
+ case 1:
+ {
+ if(b<=94)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 2:
+ {
+ if(b<=100)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 3:
+ {
+ if(b<=110)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ case 4:
+ {
+ if(b<=101)
+ a=1;
+ else
+{ a=0 ;
+return a;}
+ break;
+ }
+ }}
+ return a;
+ break;
+ }
+case 7:
+{
+switch(c)
+{
+case 1:
+{
+if(b<=69)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 2:
+{
+if(b<=57)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 3:
+{
+if(b<=73)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 4:
+{
+if(b<=92)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+}
+return a;
+break;
+}
+case 9:
+{
+switch(c)
+{
+case 1:
+{
+if(b<=77)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 2:
+{
+if(b<=51)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 3:
+{
+if(b<=64)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}
+case 4:
+{
+if(b<=69)
+a=1;
+else
+{ a=0 ;
+return a;}
+break;
+}}
+return a;
+}}}
+else
+{   b=sch[7]*10+sch[8];
+  ch = getbranch();
+  if(!strcmp(ch,"geoinformatics"))
+  {  if(c==1 && b<=14)
+      return 1;
+      else if(c==2 && b<=15)
+      return 1;
+      else
+      return 0;
+      }
+  else if(!strcmp(ch,"nanotechnology"))
+   {
+   if(c==1 && b<=13)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0; }
+   else if(!strcmp(ch,"renewable energy"))
+   {
+   if(c==1 && b<=15)
+   return 1;
+   else if(c==2 && b<=26)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"advanced computing"))
+   {
+   if(c==1 && b<=18)
+   return 1;
+   else if(c==2 && b<=19)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"bioinformatics"))
+   {
+   if(c==1 && b<=11)
+   return 1;
+   else if(c==2 && b<=10)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"biotechnolog"))
+   {
+   if(c==1 && b<=16)
+   return 1;
+   else if(c==2 && b<=11)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"chemical process"))
+   {
+   if(c==1 && b<=5)
+   return 1;
+   else if(c==2 && b<=9)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"computer networking"))
+   {
+   if(c==1 && b<=12)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"digital"))
+   {
+   if(c==1 && b<=16)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"electrical drives"))
+   {
+   if(c==1 && b<=19)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"engg materials"))
+   {
+   if(c==1 && b<=19)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"environmental engg"))
+   {
+   if(c==1 && b<=21)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"geotecnical engg"))
+   {
+   if(c==1 && b<=21)
+   return 1;
+   else if(c==2 && b<=19)
+   return 1;
+   else
+   return 0;
+   }
+   else if(! strcmp (ch,"green technoly"))
+   {
+   if(c==1 && b<=13)
+   return 1;
+   else if(c==2 && b<=19)
+   return 1;
+   else
+   return 0;
+   }
+   else if (!strcmp(ch,"hydropower engg"))
+   {
+   if(c==1 && b<=17)
+   return 1;
+   else if(c==2 && b<=25)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"industrial design"))
+   {
+   if(c==1 && b<=17)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"information security"))
+   {
+   if(c==1 && b<=16)
+   return 1;
+   else if(c==2 && b<=19)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"maintenace engg"))
+   {
+   if(c==1 && b<=19)
+   return 1;
+   else if(c==2 && b<=22)
+   return 1;
+   else
+   return 0;
+   }
+   else if(!strcmp(ch,"power system"))
+   {
+   if(c==1 && b<=16)
+   return 1;
+   else if(c==2 && b<=18)
+   return 1;
+   else
+   return 0;
+   }
+  else if(!strcmp(ch,"stress and vibrational"))
+  {
+  if(c==1 && b<=21)
+  return 1;
+  else if(c==2 && b<=19)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"structural engg"))
+  {
+  if(c==1 && b<=17)
+  return 1;
+  else if(c==2 && b<=18)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"thermal engg"))
+  {
+  if(c==1 && b<=16)
+  return 1;
+  else if(c==2 && b<=19)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"transportational engg"))
+  {
+  if(c==1 && b<=18)
+  return 1;
+  else if(c==2 && b<=14)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"vlsl and embedded system"))
+  {
+  if(c==1 && b<=17)
+  return 1;
+  else if(c==2 && b<=21)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"water resources engg"))
+  {
+  if(c==1 && b<=23)
+  return 1;
+  else if(c==2 && b<=21)
+  return 1;
+  else
+  return 0;
+  }
+  else if(!strcmp(ch,"material science and tecnology"))
+  {
+  if(c==1 && b<=19)
+  return 1;
+  else if(c==2 && b<=19)
+  return 1;
+  else
+  return 0;
+  }
+   }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int valid_sch()       //function for checking scholar number
+{ int i,a=1,c,k;             // variables for random operational
+  cout<<"enter scholar no(press space bar after each entry)\n";
+  for(int j=0;j<9; j++)        // getting scholar number
   {cin>>sch[j];
-  } c=sch[0]*10+sch[1];
- if( c > (yr-5))
+  } c=sch[0]*10+sch[1];         // year of student
+ if( c > (yr-5) )               // since after four year scholar become invalid
      {
-      for(i=2;i<9;i++)
+      for(i=2;i<6;i++)
       {
-       switch(i)
+       switch(i)                //for  checking each digit of scholar number
       {
       case 2:
       {
-      if(sch[i]==1 || sch[i]==2)
-      {
-      a=0;
+      if(sch[i]==1 || sch[i]==2)     // btech and mtech have 1 and 2 in this place
+      {    if(sch[i]==2 )
+      {      if(c>(yr-2))            // mtech is 2 year program
+	 {   a=1;   }
+	    else
+	  {  a=0 ;
+	  return a;
+	     } }
+	    else
+	    a=1;
 	  }
 	  else
-	{  a=1; }
+	{  a=0;
+	return a; }
 	  break;}
     case 3:
     {
-    if(sch[i]==1)
-   { a=0; }
+    if(sch[i]==1)                     // this is unique in each scholar number
+   { a=1; }
      else
-    { a=1;}
+    { a=0;
+    return a;
+    }
     break;
    }
    case 4:
    {
-   if(sch[2]==1 && sch[i]==1)
-   a=0;
+   if(sch[2]==1 && sch[i]==1)         // btech contains only 1 while mtech contains 0,1 and 2
+   a=1;
    else if(sch[2]==2 &&( (sch[i]==0 || sch[i]==1) || sch[i]==2))
-   { a=0;}
+   { a=1;}
 
    else
-  { a=1;}
+  { a=0;
+     return a;       }
    break;
    }
    case 5:
-   { if(sch[2]==1 && ((sch[i]!=0 && sch[i]!=8) && sch[i]!=5))
-   a=0;
-   else if(sch[2]==2 && sch[i]!=0)
-   a=0;
-   else
+   { if(sch[2]==1 && ((sch[i]!=0 && sch[i]!=8) && sch[i]!=5))    // in btech there is no 0,8 and 5 in this place
    a=1;
+   else if(sch[2]==2 && sch[i]!=0)                             //in mtech there is no 0 at this place
+   a=1;
+   else
+  { a=0;
+  return a;}
    break;
-   }}
-
-   if(a==1)
-   {
-   return 0;
-   break ;
    }
-
-    }
-   if(a==0)
-   {
-   return 1 ;
-   }}
+  case 6:
+  {
+  if(sch[2]==2)
+  {
+  if(sch[i]<=5 || sch[i]==7)
+  a=1;
+  else
+  return 0;
+  }}
+ }}
+   k  = class_str();
+   cout<<k;
+   return k;
+   }
    else
    return 0;
 
  }
    char *getbranch()
    {
-   int l;  char *ch="branch"  ;
-   l=valid_sch();
-   if(l==1)
+     char *ch="branch"  ;
    {if(sch[2]==1)
    {
    switch(sch[5])
@@ -106,17 +773,17 @@ int valid_sch()
       {  case 1:{
       switch(sch[6])
       {
-      case 1:  ch="geotechnical engg";
+      case 1:  ch="geotechnical  engg";
       break;
-      case 2:  ch="hydropower engg";
+      case 2:  ch="hydropower engg ";
       break;
-      case 3:    ch="environmental";
+      case 3:    ch="environmental engg";
       break;
-      case 4:   ch="structural";
+      case 4:   ch="structural engg";
       break;
-      case 5:   ch="transport"  ;
+      case 5:   ch="transport engg"  ;
       break;
-      case 7:  ch="water";
+      case 7:  ch="water resource engg";
       }
       return ch;
       break; }
@@ -135,9 +802,9 @@ int valid_sch()
       {
       switch(sch[6])
       {
-      case 1: ch="power";
+      case 1: ch="power system";
       break;
-      case 2: ch="elect";
+      case 2: ch="electrical drives";
       }
      return ch;
       break;}
@@ -146,9 +813,9 @@ int valid_sch()
       {
       switch(sch[6])
       {
-      case 1: ch="digital";
+      case 1: ch="digital communication";
       break ;
-      case 2: ch="vlsl";
+      case 2: ch="vlsl and embedded system ";
       }
       return ch;
       break ;}
@@ -157,13 +824,13 @@ int valid_sch()
 	 switch(sch[6])
 	 {
 	 case 1:
-	 ch="thermal";
+	 ch="thermal engg";
 	 break;
 	 case 2:
-	 ch="maintenance";
+	 ch="maintenance engg";
 	 break;
 	 case 3:
-	 ch="industrial";
+	 ch="industrial design";
 	 break;
 	 case 4:
 	 ch="engg materials";
@@ -186,14 +853,14 @@ int valid_sch()
     case 1: ch="green tecnology";
     break;
     case 2:
-    ch="renewable";
+    ch="renewable energy";
     }
     return ch;
     break;
     }
     case 9:
     {
-    ch="material";
+    ch="material science and tecnology";
     return ch;
     }
     }}
@@ -205,7 +872,7 @@ int valid_sch()
     ch="bio tecnology";
     break;
     case 5:
-    ch="geoinformation";
+    ch="geoinformatics";
     break;
     case 6:
     ch="nano technoloy";
@@ -213,38 +880,29 @@ int valid_sch()
     return ch;
     }
     else
-    { ch="bio information";
+    { ch="bioinformatics";
     return ch;}
      }}
-   else
-   cout<<"please enter valid scholar number";
+
 					     }
     int getyear()
     { int k,j,a;
- a= valid_sch();
+  a=curt_yr[2]*10+curt_yr[3];
  k=sch[0]*10+sch[1];
+ if(a>6 && a<=12 )
     j = yr-k+1;
-    if(a==1){
-    switch(j)
-    {
-    case 1:
-    return 1;
-    break;
-    case 2:
-    return 2;break;
-    case 3:
-    return 3;break;
-    case 4 :
-    return 4;}}
-    else
-    {
-    return 0;}}
+ else
+ j=yr-k;
+ return j;
+
+
+    }
 
     char *getSemester()
     { int a,b; char * ch="sems";
     a=getyear();
     b= curt_yr[2]*10 + curt_yr[3];
-     if(b>7)
+     if(b>6)
      {switch(a)
      {
      case 1: ch="i";
@@ -274,12 +932,37 @@ int valid_sch()
      }
      return ch;
      } }
+
+  int getintsems( char *ch)
+  {
+  if(!strcmp(ch,"i"))
+  return 1;
+  else if(!strcmp(ch,"ii"))
+  return 2;
+  else if(!strcmp(ch,"iii"))
+  return 3;
+  else if(!strcmp(ch,"iv"))
+  return 4;
+  else if(!strcmp(ch,"v"))
+  return 5;
+  else if(!strcmp(ch,"vi"))
+  return 6;
+  else if(!strcmp(ch,"vii"))
+  return 7;
+  else
+  return 8;
+  }
+
+
+
+
+
  class branch
 {
 public:
 char * name;
 int sems;
-char *sub[10];
+char *sub[15];
 void read(int i);
 void get_sub(char *,int)  ;
 };
@@ -293,7 +976,7 @@ case 1:
     case 1:
     {
     sub[5]="mathematics 1(MTH 111)" ;
-       sub[0]="basic civil engineering(CE112)";
+    sub[0]="basic civil engineering(CE112)";
     sub[1]="communication skills(HUM114)";
     sub[2]="computer programing(CS115)";
     sub[3]="computer program lab(CS117)";
@@ -302,6 +985,51 @@ case 1:
      sub[7]="physics(PHY118)";
      break;
      }
+    case 2:
+    {
+    sub[0]="basic electronic and electrical engg(EE124)";
+    sub[1]="basic mechanical engg(ME125)";
+    sub[2]="chemistry lab(CHEM129)";
+    sub[3]="electronics and electrical lab(EE128)";
+    sub[4]="engineering chemistry(CHEM122)";
+    sub[5]="environment science(CE123)";
+    sub[6]="mathematics(MTH121)";
+    sub[7]="solid mechanics(CE126)";
+    sub[8]="workshop practice(ME127)";
+    break;
+    }
+    case 3:
+    {
+    sub[0]="mathematics(MTH211)";
+    sub[1]="surveying1(CE212)";
+    sub[2]="structural analysis1(CE213)";
+    sub[3]="fluid mechanics 1(CE214)"  ;
+    sub[4]="engineering geology(CE215)";
+    sub[5]="building planning and drawing(ce216)";
+    sub[6]="surveying laboratory 1(ce217)";
+    sub[7]="fluid mechanics labortatory 1(ce218)";
+    sub[8]="engineering geology laboratory(ce219)";
+    break;
+    }
+    case 4:
+    {
+    sub[0]="geotechnical engineering 1(ce221)";
+    sub[1]="engineering hydrology(ce222)";
+    sub[2]=" fluid mechanics 2 (ce223)";
+    sub[3]=" project costing and contract management(ce224)";
+    sub[4]="structural design & drawing 1(ce225)";
+    sub[5]="surveying 2 (ce226)";
+    sub[6]="surveying laboratory 2(ce227)";
+    sub[7]="geotechnical engineering laboratory1(ce228)";
+    sub[8]="fluid mechanics laboratory(ce229)";
+    break;
+    }
+
+
+
+
+
+
    }
     }}}
 
@@ -380,33 +1108,21 @@ void branch :: get_sub(char *nam,int sem)
      void main()
      {
      clrscr();
-     int  n;
+     int  a;
      char *nam;
      int sem;
      branch s;
 
     cout<<"welcome to manit help desk\n";
-     cout<<"enter current date in format(ddmmyy)\n";
+     cout<<"enter current date in format(ddmmyy)(press enter or space bar after each entry)\n";
      for(int j=0;j<6;j++)
      {cin>>curt_yr[j];}
      yr=curt_yr[4]*10+curt_yr[5];
-
-       cout<<"enter 1 to know your subjects by scholar number\n";
-       cout<<"enter 2 to know your subjects by your branch and semester \n";
-
-      cin>>n;
-      if(n==2)
-      {
-      cout<<"enter your branch\n";
-      gets(nam);
-      cout<<"enter your semester \n";
-      cin>>sem;
-      s.get_sub(nam,sem);
-      for(int i=0;s.sub[i]!=NULL;i++)
-      { cout<<s.sub[i];
-      cout<<"\n";
-      }
-       }
+      a=valid_sch();
+      if(a==1)
+      cout<<"valid\n";
+      else
+      cout<<"not valid\n";
      getch();
      }
 
