@@ -732,7 +732,7 @@ int valid_sch()       //function for checking scholar number
   }}
  }}
    k  = class_str();
-   cout<<k;
+
    return k;
    }
    else
@@ -741,23 +741,30 @@ int valid_sch()       //function for checking scholar number
  }
    char *getbranch()
    {
-     char *ch="branch"  ;
+     char *ch  ;
    {if(sch[2]==1)
    {
    switch(sch[5])
    {
-   case 1:   ch = "bci";
+   case 1:   ch = "civil";
    break;
-   case 2:   ch="cse";
-
-   break;
+   case 2: { if(sch[6]==0 || sch[6]==1)
+    ch="cse1";
+    else
+    ch="cse2";
+  break;}
    case 3:   ch="electrical";
    break;
    case 4:    ch="ece";
 
    break;
-   case 6:   ch="mech";
-     break;
+   case 6: {
+
+	 if(sch[6]==0 || sch[6]==1)
+     ch="mech1";
+     else
+     ch="mech2";
+     break;}
    case 7: ch="chemical"  ;
 
    break;
@@ -883,8 +890,8 @@ int valid_sch()       //function for checking scholar number
     { ch="bioinformatics";
     return ch;}
      }}
+       }
 
-					     }
     int getyear()
     { int k,j,a;
   a=curt_yr[2]*10+curt_yr[3];
@@ -964,8 +971,11 @@ char * name;
 int sems;
 char *sub[15];
 void read(int i);
-void get_sub(char *,int)  ;
+void getsub(char *ch, int k)  ;
+
+
 };
+
 void branch :: read(int i)
 {
 switch(i)
@@ -1211,25 +1221,96 @@ case 1:
     sub[5]="electronics 2(ee226)";
     sub[6]="instrumentation lab(ee227)";
     sub[7]="electrical machines lab-2(ee228)";
-    sub[8]="electronics lab -2(ee229)";
+    sub[8]="electronics lab - 2(ee229)";
+    break;
+    }
+    case 5:
+    {
+    sub[0]="electrical machines 3(ee311)";
+    sub[1]="power electronics(ee312)";
+    sub[2]="power system 2(ee313)";
+    sub[3]="electrical machine lab 3(ee316)";
+    sub[4]="power electronics lab(ee317)";
+    sub[5]="power system lab 2(ee318)";
+    break;
+    }
+    case 6:
+    {
+    sub[0]="linear control system (ee321)";
+    sub[1]="electrical drives (ee322)";
+    sub[2]="microprocessor(ee323)";
+    sub[3]="linear control system lab(ee324)";
+    sub[4]="microprocessors lab(ee325)";
+    sub[5]="minor project(ee326)";
+    break;
+    }
+    case 7:
+    {
+    sub[0]="modern control system(ee411)";
+    sub[1]="modern control system lab(ee412)";
+    sub[2]="major project(ee413)";
+    sub[3]="educational tour(ee414)";
+    break;
+    }
+    case 8:
+    {
+    sub[0]="power system stability & control(ee421)";
+    sub[1]="major project & seminar (ee428)";
+    sub[2]="general proficiency(ee429)";
+    break;
+    }
     break;
     }
 
+   case 4:
+   {
+
+	 switch(sems)
+       {
+     case 1:
+    {
+    sub[5]="mathematics 1(MTH 111)" ;
+    sub[0]="basic civil engineering(CE112)";
+    sub[1]="communication skills(HUM114)";
+    sub[2]="computer programing(CS115)";
+    sub[3]="computer program lab(CS117)";
+    sub[4]="engineering graphics(ME116)";
+     sub[6]="physics(PHY113)";
+     sub[7]="physics(PHY118)";
+     break;
+     }
+    case 2:
+    {
+    sub[0]="basic electronic and electrical engg(EE124)";
+    sub[1]="basic mechanical engg(ME125)";
+    sub[2]="chemistry lab(CHEM129)";
+    sub[3]="electronics and electrical lab(EE128)";
+    sub[4]="engineering chemistry(CHEM122)";
+    sub[5]="environment science(CE123)";
+    sub[6]="mathematics(MTH121)";
+    sub[7]="solid mechanics(CE126)";
+    sub[8]="workshop practice(ME127)";
+    break;
+    }
+
+    }}
+
+     }}
+
+
+
+
+    }}
 
 
 
 
 
 
-
-
-
-
-
-
-void branch :: get_sub(char *nam,int sem)
-{        name=nam;
-	  sems=sem;
+void branch :: getsub(char * nam,int sem)
+{
+ name=nam;
+	  sems = sem ;
 	  if(!strcmp(name,"civil"))
   read(1);
    else if(!strcmp(name,"cse"))
@@ -1244,77 +1325,117 @@ void branch :: get_sub(char *nam,int sem)
    read(6);
    else if(!strcmp(name,"msme"))
    read(7);
-   else if(!strcmp(name,"ge"))
+   else if(!strcmp(name,"geoinformatics"))
    read(8);
-   else if(!strcmp(name,"hp"))
+   else if(!strcmp(name,"nano technology"))
    read(9);
-   else if(!strcmp(name,"ee"))
+   else if(!strcmp(name,"renewable energy"))
    read(10);
-   else if(!strcmp(name,"se"))
+   else if(!strcmp(name,"advanced computing"))
    read(11);
-   else if(!strcmp(name,"te"))
+   else if(!strcmp(name,"bio informatics"))
    read(12);
-   else if(!strcmp(name,"wr"))
+   else if(!strcmp(name,"bio technology"))
    read(13);
-   else if(!strcmp(name,"cn"))
+   else if(!strcmp(name,"chemical process"))
    read(14);
-   else if(!strcmp(name,"is"))
+   else if(!strcmp(name,"computer networking"))
    read(15);
-   else if(!strcmp(name,"ac"))
+   else if(!strcmp(name,"digital communication"))
    read(16);
-   else if(!strcmp(name,"ps"))
+   else if(!strcmp(name,"electrical drives"))
    read(17);
-   else if(!strcmp(name,"em"))
+   else if(!strcmp(name,"engg materials"))
    read(18);
-   else if(!strcmp(name,"dc"))
+   else if(!strcmp(name,"environment engg"))
    read(19);
-   else if(!strcmp(name,"vl"))
+   else if(!strcmp(name,"geotecnical engg"))
    read(20);
-     else if(!strcmp(name,"he"))
+     else if(!strcmp(name,"green technology"))
     read(21);
-    else if(!strcmp(name,"mm"))
+    else if(!strcmp(name,"hydropower engg"))
     read(22);
-    else if(!strcmp(name,"id"))
+    else if(!strcmp(name,"industrial design"))
     read(23);
-    else if(!strcmp(name,"em"))
+    else if(!strcmp(name,"information security"))
     read(24);
-    else if(!strcmp(name,"sv"))
+    else if(!strcmp(name,"maintenace engg"))
     read(25);
-    else if(!strcmp(name,"cp"))
+    else if(!strcmp(name,"power system"))
     read(26);
-    else if(!strcmp(name,"gt"))
+    else if(!strcmp(name,"stress and vibrational analysis"))
     read(27);
-    else if(!strcmp(name,"re"))
+    else if(!strcmp(name,"structural engg"))
       read(28);
-      else if(!strcmp(name,"ms"))
+      else if(!strcmp(name,"thermal engg"))
       read(29);
-      else if(!strcmp(name,"bt"))
+      else if(!strcmp(name,"transportation engg"))
       read(30);
-      else if(!strcmp(name,"gi"))
+      else if(!strcmp(name,"vlsl and embedded system"))
       read(31);
-      else if(!strcmp(name,"nt"))
+      else if(!strcmp(name,"water resource engg"))
       read(32);
-      else if(!strcmp(name,"bi"))
-      read(33);}
+      else if(!strcmp(name,"material science and technology"))
+      read(33);
+      }
 
      void main()
      {
      clrscr();
-     int  a;
+     int  a,b;
+     char *n;
      char *nam;
-     int sem;
+     int k;
      branch s;
+      nam="civil";
+      b=1;
+      s.getsub(nam,b);
 
     cout<<"welcome to manit help desk\n";
      cout<<"enter current date in format(ddmmyy)(press enter or space bar after each entry)\n";
      for(int j=0;j<6;j++)
      {cin>>curt_yr[j];}
      yr=curt_yr[4]*10+curt_yr[5];
-      a=valid_sch();
-      if(a==1)
+
+     cout<<"enter 1 for checking scholar number\n";
+     cout<<"enter 2 for know your semester\n";
+     cout<<"enter 3 for know your year\n";
+     cout<<"enter 4 for know your branch\n";
+     cin>>k  ;
+     a=valid_sch();
+     if(a==1)
+ {    switch(k)
+     {
+     case 1:
+     {
       cout<<"valid\n";
+      break;
+      }
+      case 2:
+      {
+	 n=getSemester();
+	 cout<<n;
+	 break;
+	 }
+      case 3:
+      {
+	 b=getyear();
+	 cout<<b;
+	 break;
+	 }
+      case 4:
+      {
+      nam=getbranch();
+      cout<<nam;
+      break;
+      }}
+      }
       else
-      cout<<"not valid\n";
+      {
+      cout<<"please valid scholar number";
+      }
+
+
      getch();
      }
 
