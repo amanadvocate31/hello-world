@@ -7,6 +7,51 @@ int yr;          //for  current year
 int sch[9];    // for array for scholar no
 int getyear();       // for getting year
 char *getbranch();    // for getting branch
+int convert(int i)      // for converting scholar no & date into array
+{
+  long int s;
+  int c=8;
+  if(i==1)
+  {
+cout<<"enter the scholar number\n";
+cin>>s;
+while(s>0)
+{
+sch[c]=s%10;
+s=s/10;
+c--  ;
+}
+if(c== -1)
+return 1;
+else
+return 0;
+}
+else if(i==2)
+{
+cout<<"enter current date in format(ddmmyy)\n";
+cin>>s;
+c=5;
+while(s>0)
+{
+curt_yr[c]=s%10;
+s=s/10;
+c--;
+}
+if(c== -1)
+return 1;
+else
+return 0;
+}}
+
+
+
+
+
+
+
+
+
+
 
 int class_str()   // for class strenght
 {    int a=0,c,b;
@@ -651,11 +696,12 @@ else
 
 
 int valid_sch()       //function for checking scholar number
-{ int i,a=1,c,k,b;             // variables for random operational
-  cout<<"enter scholar no(press space bar after each entry)\n";
-  for(int j=0;j<9; j++)        // getting scholar number
-  {cin>>sch[j];
-  } c=sch[0]*10+sch[1] ;	// sum of first two digit
+{ int i,a=1,c,k,b,j;	     // variables for random operational
+
+   j=convert(1);
+   if(j==1)
+   {
+   c=sch[0]*10+sch[1] ;	       // sum of first two digit
    if (sch[2]==1 && c>(yr-5) )
    b=1;
    else if(sch[2]==2 && c>(yr-3))
@@ -723,9 +769,10 @@ int valid_sch()       //function for checking scholar number
   }}
  }}
    k  = class_str();                // checking scholar no upto class strengh
-
-   return k;
+ return k;
    }
+   else
+   return 0;}
    else
    return 0;
 
@@ -2253,8 +2300,15 @@ case 1:
   }
   case 33:
   {
-  sub[0]="pending";                             // data not available
+  sub[0]="pending";
+  ns=1;                            // data not available
   }
+  case 0:
+  { sub[0]="please enter valid branch name";
+  ns=1;
+  }
+
+
   } }
 
 
@@ -2341,22 +2395,27 @@ void branch :: getsub(char * nam,int sem)
       read(32);
       else if(!strcmp(name,"material science and technology"))
       read(33);
+      else
+      read(0);
       }
 
      void main()
      {                // performance of different functions can be checked
      clrscr();
-     int  a,b;
+     int  a,b,j;
      char c='y'  ;
      char *nam;
      int k;
      branch s;
     cout<<"welcome to manit help desk\n";
-     cout<<"enter current date in format(ddmmyy)(press enter or space bar after each entry)\n";
-     for(int j=0;j<6;j++)
-     {cin>>curt_yr[j];}
-     yr=curt_yr[4]*10+curt_yr[5];
-	    while(c=='y')
+
+   j=convert(2);
+   if(j==1)
+  yr=curt_yr[4]*10+curt_yr[5];
+  else
+  cout<<"please enter date in correct form\n";
+
+   while(c=='y')
 	    {
      cout<<"enter 1 to checking scholar number\n";
      cout<<"enter 2 to know your semester\n";
