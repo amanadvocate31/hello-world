@@ -651,12 +651,19 @@ else
 
 
 int valid_sch()       //function for checking scholar number
-{ int i,a=1,c,k;             // variables for random operational
+{ int i,a=1,c,k,b;             // variables for random operational
   cout<<"enter scholar no(press space bar after each entry)\n";
   for(int j=0;j<9; j++)        // getting scholar number
   {cin>>sch[j];
-  } c=sch[0]*10+sch[1];         // year of student
- if( c > (yr-5) )               // since after four year scholar become invalid
+  } c=sch[0]*10+sch[1] ;	// sum of first two digit
+   if (sch[2]==1 && c>(yr-5) )
+   b=1;
+   else if(sch[2]==2 && c>(yr-3))
+   b=1;
+   else
+   b=0;
+
+ if( b==1 && c< yr )               // since after four year scholar become invalid
      {
       for(i=2;i<6;i++)
       {
@@ -665,20 +672,14 @@ int valid_sch()       //function for checking scholar number
       case 2:
       {
       if(sch[i]==1 || sch[i]==2)     // btech and mtech have 1 and 2 in this place
-      {    if(sch[i]==2 )
-      {      if(c>(yr-3))            // mtech is 2 year program
-	 {   a=1;   }
-	    else
-	  {  a=0 ;
-	  return a;
-	     } }
-	    else
-	    a=1;
-	  }
-	  else
+
+	 a=1;
+       else
 	{  a=0;
-	return a; }
-	  break;}
+	return a;
+	}
+	  break;
+	  }
     case 3:
     {
     if(sch[i]==1)                     // this is unique in each scholar number
