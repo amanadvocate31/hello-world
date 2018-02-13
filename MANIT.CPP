@@ -53,7 +53,7 @@ return 0;
 
 
 
-int class_str()   // for class strenght
+int class_str()   // for checking class strengh
 {    int a=0,c,b;
 char *ch;
 if(sch[6]==0 )
