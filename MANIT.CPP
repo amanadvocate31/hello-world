@@ -53,7 +53,7 @@ return 0;
 
 
 
-int class_str()   // for checking class strengh
+int class_str()   // for class strenght
 {    int a=0,c,b;
 char *ch;
 if(sch[6]==0 )
@@ -1014,12 +1014,11 @@ int ns;                                       //for no. of subjects
 char *sub[15];                                // array of string for subjects
 void read(int i);                             // for storing subjects
 void getsub(char *ch, int k)  ;                //for geting subjects
-char * print(int i)                          // for returning particular subject of semester
- {
-    return  sub[i] ;
+char * print(int i)
+   {
+    return sub[i] ;
     }
-
-
+					   // for returning particular subject of semester
 };
 
 void branch :: read(int i)
@@ -2303,10 +2302,7 @@ case 1:
   sub[0]="pending";
   ns=1;                            // data not available
   }
-  case 0:
-  { sub[0]="please enter valid branch name";
-  ns=1;
-  }
+
 
 
   } }
@@ -2331,13 +2327,13 @@ void branch :: getsub(char * nam,int sem)
 	  sems = sem ;
 	  if(!strcmp(name,"civil"))
   read(1);                                    // giving integer so that switch can be used
-   else if(!strcmp(name,"cse"))
+   else if((!strcmp(name,"cse1")) || (!strcmp(name,"cse2")))
    read(2);
    else if(!strcmp(name,"electrical"))
    read(3);
    else if(!strcmp(name,"ece"))
    read(4);
-   else if(!strcmp(name,"mech"))
+   else if((!strcmp(name,"mech1")) || (!strcmp(name,"mech2")))
    read(5);
    else if(!strcmp(name,"chemical"))
    read(6);
@@ -2405,6 +2401,7 @@ void branch :: getsub(char * nam,int sem)
      int  a,b,j;
      char c='y'  ;
      char *nam;
+     char *ch;
      int k;
      branch s;
     cout<<"welcome to manit help desk\n";
@@ -2459,12 +2456,13 @@ void branch :: getsub(char * nam,int sem)
       b=getintsems();
       s.getsub(nam,b);
       for(k=0;k<s.ns;k++)
-   {   cout<<s.print(k);
-   cout <<"\n";}
-      }
+    {  ch=s.print(k);
+      cout<<ch;}
+
+
 
       }
-      }
+      }}
       else
       {
       cout<<"please  enter valid scholar number";
@@ -2477,7 +2475,8 @@ void branch :: getsub(char * nam,int sem)
       cin>> b;
       s.getsub(nam,b);
       for(k=0;k<s.ns;k++)
-      cout<<s.print(k);
+    {  ch=s.print(k);
+     cout<<ch; }
 
 
     }
