@@ -1013,13 +1013,65 @@ int sems;                                      //for semester
 int ns;                                       //for no. of subjects
 char *sub[15];                                // array of string for subjects
 void read(int i);                             // for storing subjects
-void getsub(char *ch, int k)  ;                //for geting subjects
+void getsub(char *ch, int k)  ;	       //for geting subjects
+void sort();                          // for sorting subjects
 char * print(int i)
    {
     return sub[i] ;
     }
 					   // for returning particular subject of semester
 };
+
+
+ void  branch :: sort()
+  {
+  int a[12];
+  int i,j,k,t,c=1;
+  char *ch;
+
+
+  for( i=0;i<ns;i++)
+  {
+  a[i] = *sub[i] ;}
+  for(i=0;i<ns;i++)
+{
+for(j=0;j<(ns-1) ;j++)
+{  if(a[j]>a[j+1])
+   {
+   t=a[j];
+   a[j]=a[j+1];
+   a[j+1]=t;
+   }}}
+   for(i=0;i<ns;i++)
+   {
+   for(j=i;j<ns;j++)
+   {
+     k=*sub[j];
+     if(k==a[i])
+     {   ch=sub[j];
+	 sub[j]=sub[i];
+	 sub[i]=ch;
+      }}}
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void branch :: read(int i)
 {
@@ -2455,6 +2507,7 @@ void branch :: getsub(char * nam,int sem)
       nam=getbranch();
       b=getintsems();
       s.getsub(nam,b);
+      s.sort();
       for(k=0;k<s.ns;k++)
     {  ch=s.print(k);
       cout<<ch;}
@@ -2474,6 +2527,7 @@ void branch :: getsub(char * nam,int sem)
       cout<<"enter semester \n"  ;
       cin>> b;
       s.getsub(nam,b);
+      s.sort();
       for(k=0;k<s.ns;k++)
     {  ch=s.print(k);
      cout<<ch; }
