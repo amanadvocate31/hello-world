@@ -7,6 +7,145 @@ int yr;          //for  current year
 int sch[9];    // for array for scholar no
 int getyear();       // for getting year
 char *getbranch();    // for getting branch
+int civil[4],cse1[4],cse2[4],elect[4],ece[4],mech1[4],mech2[4],msme[4],chem[4];
+int gi[2],nt[2],re[2],ac[2],bi[2],bt[2],cp[2],cn[2],dc[2],ed[2],em[2],ee[2];
+int gte[2],gt[2],hp[2],id[2],is[2],me[2],ps[2],sva[2],se[2],the[2],te[2],vlsl[2],wre[2],mst[2];
+void class_str_filling()
+{
+  int i;
+  for(i=0;i<4;i++)
+  {
+  switch(i)
+  {
+  case 0:
+  {
+  civil[i]=126  ;
+  cse1[i]= 109   ;
+  cse2[i]=301  ;          //class strengh=101
+  elect[i]=122  ;
+  mech1[i]=94  ;
+  mech2[i]=290   ;        //class strenght=90
+  ece[i]=148  ;
+  msme[i]=77  ;
+  chem[i]=69  ;
+  break;
+  }
+  case 1:
+  {
+  civil[i]=102  ;
+  cse1[i]= 100   ;
+  cse2[i]= 300 ;
+  elect[i]= 125 ;
+  mech1[i]=100  ;
+  mech2[i]=294   ;
+  ece[i]= 165 ;
+  msme[i]= 51 ;
+  chem[i]= 57 ;
+  break;
+  }
+  case 2 :
+  {
+  civil[i]=126  ;
+  cse1[i]= 114   ;
+  cse2[i]=310  ;
+  elect[i]=130  ;
+  mech1[i]=110  ;
+  mech2[i]=301   ;
+  ece[i]=169  ;
+  msme[i]=64  ;
+  chem[i]=73  ;
+  break;
+  }
+  case 3:
+  {
+  civil[i]=139  ;
+  cse1[i]= 110   ;
+  cse2[i]=307  ;
+  elect[i]=134  ;
+  mech1[i]=101  ;
+  mech2[i]=296   ;
+  ece[i]=171  ;
+  msme[i]=60  ;
+  chem[i]=92  ;
+
+  } }
+  if(i<2)
+  {
+   switch(i)
+   {
+   case 0:
+   {
+     gi[i]=14  ;
+     nt[i]=13  ;
+     re[i]=15  ;
+     ac[i]=18  ;
+     bi[i]=11 ;
+     bt[i]=16  ;
+     cp[i]=5 ;
+     cn[i]=12 ;
+     dc[i]=16  ;
+     ed[i]=19  ;
+     em[i]=19  ;
+     ee[i]=21  ;
+     gte[i]=21  ;
+     gt[i]=13  ;
+     hp[i]=17 ;
+     id[i]= 17 ;
+     is[i]=16  ;
+     me[i]= 19 ;
+     ps[i]= 16 ;
+     sva[i]=21  ;
+     se[i]=17  ;
+     the[i]=16  ;
+     te[i]=18  ;
+     vlsl[i]=17  ;
+     wre[i]=23  ;
+     mst[i]=19  ;
+     break;
+     }
+     case 1:
+       {
+     gi[i]=15  ;
+     nt[i]=18  ;
+     re[i]=26  ;
+     ac[i]=19  ;
+     bi[i]=10 ;
+     bt[i]=11  ;
+     cp[i]=9 ;
+     cn[i]=18 ;
+     dc[i]=18  ;
+     ed[i]=18  ;
+     em[i]=18  ;
+     ee[i]= 18 ;
+     gte[i]= 19 ;
+     gt[i]=19  ;
+     hp[i]=25 ;
+     id[i]=18  ;
+     is[i]=19  ;
+     me[i]=22  ;
+     ps[i]=18  ;
+     sva[i]=19  ;
+     se[i]=18  ;
+     the[i]=19  ;
+     te[i]= 14 ;
+     vlsl[i]=21  ;
+     wre[i]=21   ;
+     mst[i]=19  ;
+
+     }
+     }}}
+     }
+
+
+
+
+
+
+
+
+
+
+
 int convert(int i)      // for converting scholar no & date into array
 {
   long int s;
@@ -53,13 +192,13 @@ return 0;
 
 
 
-int class_str()   // for class strenght
+int class_str()             // for class strenght
 {    int a=0,c,b;
 char *ch;
 if(sch[6]==0 )
-b=sch[7]*10+sch[8];         // for class strength
+b=sch[7]*10+sch[8];         //  storing class strength
 else
-b= sch[6]*100+sch[7]*10+sch[8];     // class strength>100
+b= sch[6]*100+sch[7]*10+sch[8];     //storing class strength>100
 
 c=getyear();                        // getting year
 
@@ -70,7 +209,7 @@ c=getyear();                        // getting year
    {      switch(c)
    {
    case 1:                                // first year strengh
-   { if(b<=103)
+   { if(b<=civil[c-1])
       a=1;
       else
      a=0;
@@ -79,7 +218,7 @@ c=getyear();                        // getting year
       }
    case 2:
    {                                         // second year strenght
-   if(b<=102)
+   if(b<=civil[c-1])
    a=1;
    else
     a=0;
@@ -88,7 +227,7 @@ c=getyear();                        // getting year
    }
    case 3:
    {
-   if(b<=126)                             // third year strenght
+   if(b<=civil[c-1])                             // third year strenght
    a=1;
    else
    a=0;
@@ -97,7 +236,7 @@ c=getyear();                        // getting year
    }
    case 4:                                 // fourth year strenght
    {
-   if(b<=139)
+   if(b<=civil[c-1])
    a=1;
    else
    a=0;
@@ -115,7 +254,7 @@ c=getyear();                        // getting year
    switch(c)
   {case 1 :
   {
-  if(b<=301)
+  if(b<=cse2[c-1])
   a=1;
   else
   a=0;
@@ -123,7 +262,7 @@ c=getyear();                        // getting year
   }
   case 2:
   {
-  if(b<=300)
+  if(b<=cse2[c-1])
   a=1;
   else
   a=0;
@@ -131,7 +270,7 @@ c=getyear();                        // getting year
   }
   case 3:
   {
-  if(b<=310)
+  if(b<=cse2[c-1])
   a=1;
   else
   a=0;
@@ -139,7 +278,7 @@ c=getyear();                        // getting year
   }
   case 4:
   {
-  if(b<=307)
+  if(b<=cse2[c-1])
   a=1;
   else
   a=0;
@@ -150,7 +289,7 @@ c=getyear();                        // getting year
  {  switch(c) {
  case 1:
  {
- if(b<=109)
+ if(b<=cse1[c-1])
  a=1;
  else
 a=0;
@@ -158,7 +297,7 @@ break;
  }
  case 2:
  {
- if(b<=106)
+ if(b<=cse1[c-1])
  a=1;
  else
  a=0 ;
@@ -166,7 +305,7 @@ break;
  }
  case 3:
  {
- if(b<=114)
+ if(b<=cse1[c-1])
  a=1;
  else
  a=0;
@@ -174,7 +313,7 @@ break;
  }
  case 4:
  {
- if(b<=110)
+ if(b<=cse1[c-1])
  a=1;
  else
  a=0;
@@ -190,7 +329,7 @@ break;
  {
  case 1:
  {
- if(b<=122)
+ if(b<=elect[c-1])
  a=1;
  else
  a=0 ;
@@ -198,7 +337,7 @@ break;
  }
  case 2:
  {
- if(b<=125)
+ if(b<=elect[c-1])
  a=1;
  else
  a=0 ;
@@ -206,7 +345,7 @@ break;
  }
  case 3:
  {
- if(b<=130)
+ if(b<=elect[c-1])
  a=1;
  else
 a=0 ;
@@ -215,7 +354,7 @@ a=0 ;
  }
  case 4:
  {
- if(b<=134)
+ if(b<=elect[c-1])
  a=1;
  else
 a=0;
@@ -231,7 +370,7 @@ switch(c)
 {
 case 1:
 {
-if(b<=148)
+if(b<=ece[c-1])
 a=1;
 else
  a=0 ;
@@ -240,7 +379,7 @@ break;
 }
 case 2:
 {
-if(b<=165)
+if(b<=ece[c-1])
 a=1;
 else
 a=0 ;
@@ -249,13 +388,13 @@ break;
 }
 case 3:
 {
-if(b<=169)
+if(b<=ece[c-1])
 a=1;
 break;
 }
 case 4:
 {
-if(b<=171)
+if(b<=ece[c-1])
 a=1;
 else
 a=0 ;
@@ -272,7 +411,7 @@ case 6 :
   {
 case 1:
 {
-if(b<=290)
+if(b<=mech2[c-1])
    a=1;
    else
 a=0 ;
@@ -281,7 +420,7 @@ a=0 ;
    }
  case 2:
  {
- if(b<=294)
+ if(b<=mech2[c-1])
  a=1;
  else
 a=0 ;
@@ -290,7 +429,7 @@ a=0 ;
  }
  case 3:
  {
- if(b<=301)
+ if(b<=mech2[c-1])
  a=1;
  else
 a=0 ;
@@ -299,7 +438,7 @@ a=0 ;
  }
  case 4:
  {
- if(b<=296)
+ if(b<=mech2[c-1])
  a=1;
  else
 a=0 ;
@@ -314,7 +453,7 @@ a=0 ;
  {
  case 1:
  {
- if(b<=94)
+ if(b<=mech1[c-1])
  a=1;
  else
 a=0 ;
@@ -323,7 +462,7 @@ a=0 ;
  }
  case 2:
  {
- if(b<=100)
+ if(b<=mech1[c-1])
  a=1;
  else
 a=0 ;
@@ -332,7 +471,7 @@ a=0 ;
  }
  case 3:
  {
- if(b<=110)
+ if(b<=mech1[c-1])
  a=1;
  else
 a=0 ;
@@ -340,7 +479,7 @@ a=0 ;
  }
  case 4:
  {
- if(b<=101)
+ if(b<=mech1[c-1])
  a=1;
  else
  a=0 ;
@@ -357,7 +496,7 @@ switch(c)
 {
 case 1:
 {
-if(b<=69)
+if(b<=chem[c-1])
 a=1;
 else
  a=0 ;
@@ -366,7 +505,7 @@ break;
 }
 case 2:
 {
-if(b<=57)
+if(b<=chem[c-1])
 a=1;
 else
  a=0 ;
@@ -375,7 +514,7 @@ break;
 }
 case 3:
 {
-if(b<=73)
+if(b<=chem[c-1])
 a=1;
 else
  a=0 ;
@@ -384,7 +523,7 @@ break;
 }
 case 4:
 {
-if(b<=92)
+if(b<=chem[c-1])
 a=1;
 else
  a=0 ;
@@ -401,7 +540,7 @@ switch(c)
 {
 case 1:
 {
-if(b<=77)
+if(b<=msme[c-1])
 a=1;
 else
  a=0 ;
@@ -410,7 +549,7 @@ break;
 }
 case 2:
 {
-if(b<=51)
+if(b<=msme[c-1])
 a=1;
 else
  a=0 ;
@@ -419,7 +558,7 @@ break;
 }
 case 3:
 {
-if(b<=64)
+if(b<=msme[c-1])
 a=1;
 else
  a=0 ;
@@ -427,7 +566,7 @@ break;
 }
 case 4:
 {
-if(b<=69)
+if(b<=msme[c-1])
 a=1;
 else
  a=0 ;
@@ -1010,24 +1149,22 @@ int valid_sch()       //function for checking scholar number
 public:                                          // branch wise subjects
 char * name;                                    // for name of branch
 int sems;                                      //for semester
-int ns;                                       //for no. of subjects
-char *sub[15];                                // array of string for subjects
-void read(int i);                             // for storing subjects
+int ns;                                     //for no. of subjects in a semester
+char *sub[15];                            // array of string for subjects
+void read(int i);                         // for storing subjects
 void getsub(char *ch, int k)  ;	       //for geting subjects
 void sort();                          // for sorting subjects
 char * print(int i)
    {
-    return sub[i] ;
-    }
-					   // for returning particular subject of semester
+     return sub[i] ;  }                // for returning particular subject of semester
 };
 
 
  void  branch :: sort()
   {
-  int a[12];
-  int i,j,k,t,c=1;
-  char *ch;
+  int a[12];             // this array will store ascii value of first letter of subject
+  int i,j,k,t;            //  for using loop
+  char *ch;               // temporary variable
 
 
   for( i=0;i<ns;i++)
@@ -2463,6 +2600,7 @@ void branch :: getsub(char * nam,int sem)
   yr=curt_yr[4]*10+curt_yr[5];
   else
   cout<<"please enter date in correct form\n";
+  class_str_filling();
 
    while(c=='y')
 	    {
