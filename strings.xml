@@ -1,0 +1,69 @@
+<resources>
+
+    <string name="app_name">MANITWoSAFETY </string>
+    <string name="Information">Account not available</string>
+
+
+    <string name="edit_contact">EDIT CONTACT</string>
+
+
+    <string name="now_you_are_safe">NOW YOU ARE SAFE !</string>
+    <string name="best_of_luck">BEST OF LUCK!</string>
+    <string name="hope_someone_will_help_you">HOPE! SOMEONE WILL HELP YOU</string>
+
+
+    <string name="contact_1">CONTACT1</string>
+    <string name="contact_2">CONTACT2</string>
+    <string name="contact_3">CONTACT3</string>
+    <string name="save_edit">SAVE</string>
+    <string name="saved_contacts"> EDIT SAVED CONTACTS</string>
+    <string name="save_edit_your_emergency_contacts">SAVE/EDIT YOUR EMERGENCY CONTACTS</string>
+    <string name="about">
+
+             MANITWoSAFETY APP as name suggest it is made for protection of women within as well as outside of MANIT campus."\n"
+        This app is meant for all women  (Students,Teachers,SBI bank employee ,......)."\n"
+        There is an initiative  by Bhopal police for helping women."\n"
+      A whatsApp number is provided by them for helping women."\n"
+        whatsApp no - 07049106300 "\n"
+     We recommend to add this number in your emergency contacts mostly who live outside the
+        campus (Students,Teachers,SBI employee…) "\n"
+        </string>
+    <string name="how_to_use">
+    - Save your Emergency contacts. "\n"
+    - You can change your Saved contacts anytime. "\n"
+    - Please select one sim for sending message always(very important)."\n"
+    - Always keep your location on ."\n"
+    - Press power button four times (in a row) in emergency."\n"
+    - You will hear a Beep,when your app starts sending messages. "\n"
+    - You will hear long warning audio if location(GPS) is not enabled on your phone."\n"
+    - Messages(containing  your current location on google map ) are send to your emergency contacts(in interval of 4 minutes) till  you close the app."\n"
+    - You can use Trial option for testing your phone compatibility."\n"
+    - A fake number is used in Trial option not Saved contacts.
+</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="for_outsiders">
+     There is an initiative  by Bhopal police for helping women."\n"
+      A whatsApp number is provided by them for helping women."\n"
+        whatsApp no - 07049106300 "\n"
+     We recommend to add this number in your emergency contacts mostly who live outside the
+        campus (Students,Teachers,SBI employee…) "\n"
+
+
+
+    </string>
+    <string name="phone_number">choose emergency contacts</string>
+    <string name="contact_4">CONTACT4</string>
+    <string name="take_trial">Take trial for fake number</string>
+    <string name="add_account">ADD ACCOUNT</string>
+    <string name="view_account">View Account</string>
+    <string name="c">EDIT CONTACT</string>
+    <string name="press_in_emergency">PRESS POWER BUTTON FOUR TIMES IN EMERGENCY(IN A ROW) OR PRESS BUTTON BELOW</string>
+    <string name="emergency">EMERGENCY</string>
+    <string name="help">HELP</string>
+    <string name="a">ABOUT</string>
+    <string name="follow_following_steps">FOLLOW FOLLOWING STEPS:</string>
+    <string name="stop_sending_message">STOP SENDING MESSAGE</string>
+
+</resources>

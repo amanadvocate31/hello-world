@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/EditContact"
+        android:title="@string/c"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/help"
+        android:title="@string/help"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/About"
+        android:title="@string/a"
+        app:showAsAction="never"/>
+
+    <item
+        android:id ="@+id/Trial"
+        android:title="@string/take_trial"
+        app:showAsAction="never"/>
+
+
+</menu>

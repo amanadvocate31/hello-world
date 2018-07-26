@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".about1">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <include
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            layout="@layout/toolbar"/>
+    </android.support.design.widget.AppBarLayout>
+    <me.biubiubiu.justifytext.library.JustifyTextView
+        android:id="@+id/text"
+        android:layout_marginTop="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/about"
+android:background="#00ff00"
+        android:textSize="22sp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+</android.support.constraint.ConstraintLayout>
